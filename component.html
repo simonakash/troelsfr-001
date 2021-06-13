@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="icon" href="https://fiverr-res.cloudinary.com/image/upload/t_profile_original,q_auto,f_auto/v1/attachments/profile/photo/d73ee338982a387dead9b188fbd80067-1599163244802/865d5da4-0b6a-4286-87ac-93f7282aecb8.jpeg">
+		<!-- Company Name -->
+		<title>Troelsfr</title>
+		<!-- Google Font  -->
+		<link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" >
+		<style>
+			/*---- This css use for Ul li menu After efect----*/
+			ul li{
+				position: relative;
+			}
+			ul li a:after{
+				content: "";
+				height: 1px;
+				width: 0px;
+				left: 0;
+				bottom: -2px;
+				position: absolute;
+				background: rgba(79,70,229);
+				transition-duration: .4s;
+			}
+			ul li a:hover::after,ul li a:focus::after,ul li a:active::after,.active::after{
+				width: 100% !important;
+			}
+			/*---- This css use for progressbar----*/
+			.bg-striped{
+					background-image: linear-gradient(45deg
+				,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+					background-size: 1rem 1rem;
+			}
+		</style>
+	</head>
+	<body>
+		<main class=" lg:p-20 sm:p-10 p-4">
+			<!--===============------Accordion-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl ">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">Accordion</h1>
+				<!----Component---->
+				<div class=" border rounded-md p-6">
+					<!-------001---------->
+					<div x-data="{selected:null}" @click.away="selected=false" class="border rounded-t">
+						<!------Button--------->
+						<button @click="selected !== 1 ? selected = 1 : selected = null" class=" w-full text-left focus:outline-none focus:ring ring-blue-200 p-4 rounded-t flex items-center justify-between" :class="{'border-b bg-blue-100 text-blue-500':selected===1 }">
+							<span>Accordion Item #1</span>
+							<span class=" text-gray-500 transform duration-500" :class="{'-rotate-180' :selected === 1}">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+								</svg>
+							</span>
+						</button>
+						<!------Content--------->
+						<div class="relative overflow-hidden transition-all max-h-0 duration-500 px-4" x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+							<div class="py-3">
+								<span><span class=" font-bold">This is the first item's accordion body. </span>It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.</span>
+							</div>
+						</div>
+					</div>
+					<!-------002---------->
+					<div x-data="{selected:null}" @click.away="selected=false" class="border border-t-0"> 
+						<!------Button--------->
+						<button @click="selected !== 1 ? selected = 1 : selected = null" class=" w-full text-left focus:outline-none focus:ring p-4 ring-blue-200 flex items-center justify-between" :class="{'border-b bg-blue-100 text-blue-500':selected===1 }">
+							<span>Accordion Item #1</span>
+							<span class=" text-gray-500 transform duration-500" :class="{'-rotate-180' :selected === 1}">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+								</svg>
+							</span>
+						</button>
+						<!------Content--------->
+						<div class="relative overflow-hidden transition-all max-h-0 duration-500 px-4" x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+							<div class="py-3">
+								<span><span class=" font-bold">This is the first item's accordion body. </span>It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.</span>
+							</div>
+						</div>
+					</div>
+					<!-------002---------->
+					<div x-data="{selected:null}" @click.away="selected=false" class="border rounded-b border-t-0"> 
+						<!------Button--------->
+						<button @click="selected !== 1 ? selected = 1 : selected = null" class=" w-full text-left focus:outline-none focus:ring ring-blue-200 p-4 flex items-center justify-between" :class="{'border-b  bg-blue-100 text-blue-500':selected===1}">
+							<span>Accordion Item #1</span>
+							<span class=" text-gray-500 transform duration-500" :class="{'-rotate-180' :selected === 1}">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+								</svg>
+							</span>
+						</button>
+						<!------Content--------->
+						<div class="relative overflow-hidden transition-all max-h-0 duration-500 px-4" x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+							<div class="py-3">
+								<span><span class=" font-bold">This is the first item's accordion body. </span>It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--===============------Alerts-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">Alerts</h1>
+				<!----Component---->
+				<div x-data="{alert:true}" x-show="alert" class=" flex items-center justify-between p-4 rounded bg-green-100">
+					<span class=" text-gray-500"><strong class="text-green-500">Holy guacamole!</strong> You should check in on some of those fields below.</span>
+					<span @click="alert=false" class="text-gray-400 hover:text-gray-500 transform ml-4 duration-300">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+						</svg>
+					</span>
+				</div>
+			</div>
+			<!--===============------Badge-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">Badge</h1>
+				<!----Component---->
+				<div class=" sm:flex items-center sm:space-x-5 sm:space-y-0 space-y-6">
+					<span class="px-3 font-medium shadow-xl py-1 ml-5 rounded bg-blue-600 text-white capitalize">Blue</span>
+					<span class="px-3 font-medium shadow-xl py-1 rounded bg-gray-600 text-white capitalize">gray</span>
+					<span class="px-3 font-medium shadow-xl py-1 rounded bg-yellow-500 text-white capitalize">yellow</span>
+					<span class="px-3 font-medium shadow-xl py-1 rounded bg-red-500 text-white capitalize">red</span>
+					<span class="px-3 font-medium shadow-xl py-1 rounded bg-green-500 text-white capitalize">green</span>
+					<div class=" relative px-10 py-3 inline-block border rounded duration-500">
+						<a href="#">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+						  </svg>
+						  <span class="h-6 w-6 text-center absolute top-2 right-4 rounded-full bg-gray-800 text-white">0</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!--===============------Breadcrumb-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4 font-medium">Breadcrumb</h1>
+				<!----Component---->
+				<!---01-->
+				<div class=" flex items-center mb-3 text-gray-400">
+					<a class="text-blue-400 underline" href="#">Home</a>
+				</div>
+				<!---01-->
+				<div class=" flex items-center mb-3 text-gray-400">
+					<a class="text-blue-400 underline" href="#">Home</a>
+					<span class="px-2">/</span>
+					<a class="underline" href="#">About</a>
+				</div>
+				<!---02-->
+				<div class=" flex items-center mb-3 text-gray-400">
+					<a class="text-blue-400 underline" href="#">Home</a>
+					<span class="px-2">/</span>
+					<a class="text-blue-400 underline" href="#">About</a>
+					<span class="px-2">/</span>
+					<a class=" text-gray-400" href="#">Data</a>
+				</div>
+			</div>
+			<!--===============------Button-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">Button</h1>
+				<!----Component---->
+				<div class=" md:flex items-center md:space-x-5 md:space-y-0 space-y-6">
+					<button class="px-10 focus:outline-none focus:ring hover:bg-blue-700 font-medium hover:shadow-2xl py-3 rounded bg-blue-600 text-white capitalize">Blue</button>
+					<button class="px-10 focus:outline-none focus:ring hover:bg-gray-700 font-medium hover:shadow-2xl py-3 rounded bg-gray-600 text-white capitalize">gray</button>
+					<button class="px-10 focus:outline-none focus:ring hover:bg-yellow-500 font-medium hover:shadow-2xl py-3 rounded bg-yellow-400 text-white capitalize">yellow</button>
+					<button class="px-10 focus:outline-none focus:ring hover:bg-red-600 font-medium hover:shadow-2xl py-3 rounded bg-red-500 text-white capitalize">red</button>
+					<button class="px-10 focus:outline-none focus:ring hover:bg-green-600 font-medium hover:shadow-2xl py-3 rounded bg-green-500 text-white capitalize">green</button>
+				</div>
+			</div>
+			<!--===============------Button group-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">Button group</h1>
+				<!----Component---->
+				<div x-data="{ tab:'tab1'}" class=" flex items-center">
+					<button @click="tab = 'tab1'" :class="{'bg-blue-700 font-medium': tab==='tab1'}"  class="px-4 focus:outline-none focus:ring hover:bg-blue-700  hover:shadow-2xl py-1 rounded-l bg-blue-600 text-white capitalize">1</button>
+					<button @click="tab = 'tab2'" :class="{'bg-gray-700 font-medium': tab==='tab2'}" class="px-4 focus:outline-none focus:ring hover:bg-gray-700 hover:shadow-2xl py-1 bg-gray-600 text-white capitalize">2</button>
+					<button @click="tab = 'tab3'" :class="{'bg-yellow-500 font-medium': tab==='tab3'}" class="px-4 focus:outline-none focus:ring hover:bg-yellow-500 hover:shadow-2xl py-1 bg-yellow-400 text-white capitalize">3</button>
+					<button @click="tab = 'tab4'" :class="{'bg-red-600 font-medium': tab==='tab4'}" class="px-4 focus:outline-none focus:ring hover:bg-red-600 hover:shadow-2xl py-1 bg-red-500 text-white capitalize">4</button>
+					<button @click="tab = 'tab5'" :class="{'bg-green-600 font-medium': tab==='tab5'}" class="px-4 focus:outline-none focus:ring hover:bg-green-600 hover:shadow-2xl py-1 rounded-r bg-green-500 text-white capitalize">5</button>
+				</div>
+			</div>
+			<!--===============------Card-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">Card</h1>
+				<!----Component---->
+				<div class=" grid lg:grid-cols-4 md:grid-cols-2 gap-10">
+					<div class=" shadow-xl rounded-md">
+						<div>
+							<img class="rounded-t" src="https://t4.ftcdn.net/jpg/03/17/25/45/360_F_317254576_lKDALRrvGoBr7gQSa1k4kJBx7O2D15dc.jpg" alt="Demo">
+						</div>
+						<div class="p-4">
+							<h1 class=" text-xl font-semibold">Card title</h1>
+							<p class=" text-gray-500">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<button class="w-full mt-4 duration-500 focus:outline-none focus:ring hover:bg-yellow-500 font-medium hover:shadow-2xl py-2 rounded bg-yellow-400 text-white capitalize">Button</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--===============------Close Button-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">Close Button</h1>
+				<!----Component---->
+				<div x-data="{close:true}" class=" flex items-center justify-between w-full h-16 px-6 bg-yellow-300 rounded-md">
+					<button @click="close=!close" :class="{'-rotate-45' :close===false}" class=" text-white duration-500 transform focus:outline-none">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+						</svg>
+					</button>
+					<div x-show="close">
+						<span class="text-white text-xl font-semibold">Click close button to close this text</span>
+					</div>
+					<button @click="close=!close" :class="{'-rotate-45' :close===false}" class=" text-white duration-500 transform focus:outline-none">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+						  </svg>
+					</button>
+				</div>
+			</div>
+			<!--===============------Collapse-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">Collapse</h1>
+				<!----Component---->
+				<div class=" p-6">
+					<!-------001---------->
+					<div x-data="{selected:null}" @click.away="selected=false">
+						<!------Button--------->
+						<div class="grid sm:grid-cols-2 gap-10">
+							<button @click="selected !== 1 ? selected = 1 : selected = null" class="px-10 py-2 bg-purple-600 hover:bg-purple-700 rounded text-white font-semibold focus:outline-none" :class="{' shadow-2xl bg-purple-700':selected===1 }">
+								<span>Open first div</span>
+							</button>
+							<button @click="selected !== 2 ? selected = 2 : selected = null" class="px-10 py-2 bg-purple-600 hover:bg-purple-700 rounded text-white font-semibold focus:outline-none" :class="{' shadow-2xl bg-purple-700':selected===1 }">
+								<span>Open 2nd div</span>
+							</button>
+						</div>
+						
+						<!------Content--------->
+						<div class="grid sm:grid-cols-2 gap-10">
+							<div class="relative overflow-hidden transition-all max-h-0 duration-500 " x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+								<div class="py-3 rounded-md border p-4 mt-5">
+									<span><span class=" font-bold">This is the first Div. </span>It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.</span>
+								</div>
+							</div>
+							<div class="relative overflow-hidden transition-all max-h-0 duration-500 " x-ref="container2" x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
+								<div class="py-3 rounded-md border p-4 mt-5">
+									<span><span class=" font-bold">This is the 2nd Div. </span>It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--===============------Dropdown-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">Dropdown</h1>
+				<!----Component---->
+				<div class=" grid md:grid-cols-2 gap-6">
+					<div class=" hidden lg:block">
+						<!--001-->
+						<div x-data="{menu:false}" @click.away="menu=false" class="mb-4 relative ">
+							<!--------mega menu button----------->
+							<button  @click="menu=!menu" class="px-4 py-3 bg-green-400 hover:bg-green-500 rounded text-white font-semibold flex items-center focus:outline-none">
+								<span class=" mr-3">Click This to open Dropdown mega menu</span>
+								<span><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+								</svg></span>
+							</button>
+							<!--------mega menu----------->
+							<div x-show="menu"
+							x-transition:enter="duration-300 ease-in-out"
+							x-transition:enter-start="opacity-0 transform translate-x-12"
+							x-transition:enter-end="opacity-100 transform translate-x-0"
+							x-transition:leave="duration-300 ease-in-out"
+							x-transition:leave-start="opacity-100 transform translate-x-0"
+							x-transition:leave-end="opacity-0 transform translate-x-12"
+							class="absolute left-96 top-0 w-60 bg-white p-5 rounded-md shadow-xl border border-gray-100 z-50">
+								<ul>
+									<!--------->
+									<li class="mb-2">
+										<a class="w-full hover:text-yellow-500 hover:text-yellow-500 flex items-center justify-between text-gray-500 text-sm" href="#">Watches</a>
+									</li>
+									<!--------->
+									<li x-data="{submenu:false}" @mouseover="submenu=true" @mouseout="submenu=false" class="mb-2 relative ">
+										<!--------mega menu button----------->
+										<a class="w-full hover:text-yellow-500 hover:text-yellow-500 flex items-center justify-between text-gray-500 text-sm" href="#">
+											<span>Utility </span>
+											<span><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+											</svg></span>
+										</a>
+										<!--------mega menu----------->
+										<div x-show="submenu"
+										x-transition:enter="duration-300 ease-in-out"
+										x-transition:enter-start="opacity-0 transform translate-x-12"
+										x-transition:enter-end="opacity-100 transform translate-x-0"
+										x-transition:leave="duration-300 ease-in-out"
+										x-transition:leave-start="opacity-100 transform translate-x-0"
+										x-transition:leave-end="opacity-0 transform translate-x-12"
+										class="absolute left-52 ml-3 top-0 w-60 bg-white p-5 rounded-md shadow-xl border border-gray-100">
+											<ul>
+												<!--------->
+												<li class="mb-2">
+													<a class="w-full hover:text-yellow-500 hover:text-yellow-500 flex items-center justify-between text-gray-500 text-sm" href="#">Angene mafin</a>
+												</li>
+												<!--------->
+												<li class="mb-2">
+													<a class="w-full hover:text-yellow-500 hover:text-yellow-500 flex items-center justify-between text-gray-500 text-sm" href="#">Delicacies</a>
+												</li>
+												<!--------->
+												<li class="mb-2">
+													<a class="w-full hover:text-yellow-500 hover:text-yellow-500 flex items-center justify-between text-gray-500 text-sm" href="#">Publications</a>
+												</li>
+												<!--------->
+												<li>
+													<a class="w-full hover:text-yellow-500 hover:text-yellow-500 flex items-center justify-between text-gray-500 text-sm" href="#">Girls New</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<!--------->
+									<li class="mb-2">
+										<a class="w-full hover:text-yellow-500 hover:text-yellow-500 flex items-center justify-between text-gray-500 text-sm" href="#">Garden</a>
+									</li>
+									<!--------->
+									<li>
+										<a class="w-full hover:text-yellow-500 hover:text-yellow-500 flex items-center justify-between text-gray-500 text-sm" href="#">Swatch kid</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!--001-->
+						<div x-data="{menu:false}"  @mouseover="menu=true" @mouseout="menu=false" class="mb-4 relative inline-block">
+							<!--------mega menu button----------->
+							<button  class="px-4 py-3 bg-blue-500 hover:bg-blue-600 rounded text-white font-semibold flex items-center focus:outline-none">
+								<span class=" mr-3">Hover This to open Dropdown mega menu</span>
+								<span><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+								</svg></span>
+							</button>
+							<!--------mega menu----------->
+							<div x-show="menu"
+							x-transition:enter="duration-300 ease-in-out"
+							x-transition:enter-start="opacity-0 transform translate-x-12"
+							x-transition:enter-end="opacity-100 transform translate-x-0"
+							x-transition:leave="duration-300 ease-in-out"
+							x-transition:leave-start="opacity-100 transform translate-x-0"
+							x-transition:leave-end="opacity-0 transform translate-x-12"
+							class="absolute left-96 top-0 w-60 bg-white p-5 rounded-md shadow-xl border border-gray-100 z-50">
+								<ul>
+									<!--------->
+									<li class="mb-2">
+										<a class="w-full hover:text-yellow-500 hover:text-yellow-500 flex items-center justify-between text-gray-500 text-sm" href="#">Watches</a>
+									</li>
+									<!--------->
+									<li x-data="{submenu:false}" @mouseover="submenu=true" @mouseout="submenu=false" class="mb-2 relative ">
+										<!--------mega menu button----------->
+										<a class="w-full hover:text-yellow-500 hover:text-yellow-500 flex items-center justify-between text-gray-500 text-sm" href="#">
+											<span>Utility </span>
+											<span><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+											</svg></span>
+										</a>
+										<!--------mega menu----------->
+										<div x-show="submenu"
+										x-transition:enter="duration-300 ease-in-out"
+										x-transition:enter-start="opacity-0 transform translate-x-12"
+										x-transition:enter-end="opacity-100 transform translate-x-0"
+										x-transition:leave="duration-300 ease-in-out"
+										x-transition:leave-start="opacity-100 transform translate-x-0"
+										x-transition:leave-end="opacity-0 transform translate-x-12"
+										class="absolute left-52 ml-3 top-0 w-60 bg-white p-5 rounded-md shadow-xl border border-gray-100">
+											<ul>
+												<!--------->
+												<li class="mb-2">
+													<a class="w-full hover:text-yellow-500 hover:text-yellow-500 flex items-center justify-between text-gray-500 text-sm" href="#">Angene mafin</a>
+												</li>
+												<!--------->
+												<li class="mb-2">
+													<a class="w-full hover:text-yellow-500 hover:text-yellow-500 flex items-center justify-between text-gray-500 text-sm" href="#">Delicacies</a>
+												</li>
+												<!--------->
+												<li class="mb-2">
+													<a class="w-full hover:text-yellow-500 hover:text-yellow-500 flex items-center justify-between text-gray-500 text-sm" href="#">Publications</a>
+												</li>
+												<!--------->
+												<li>
+													<a class="w-full hover:text-yellow-500 hover:text-yellow-500 flex items-center justify-between text-gray-500 text-sm" href="#">Girls New</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<!--------->
+									<li class="mb-2">
+										<a class="w-full hover:text-yellow-500 hover:text-yellow-500 flex items-center justify-between text-gray-500 text-sm" href="#">Garden</a>
+									</li>
+									<!--------->
+									<li>
+										<a class="w-full hover:text-yellow-500 hover:text-yellow-500 flex items-center justify-between text-gray-500 text-sm" href="#">Swatch kid</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--------------------->
+					<div>
+						<div x-data="{dropdown:false}" @click.away="dropdown=false" class=" relative">
+							<button @click="dropdown=!dropdown" class="px-6 focus:outline-none py-2 rounded-md bg-yellow-500 text-white flex items-center" type="button">
+								<span>Dropdown</span>
+								<span :class="{'-rotate-180' :dropdown===true}" class=" ml-3 duration-500 transform">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+										<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+									  </svg>
+								</span>
+							</button>
+							<ul x-show="dropdown" class=" shadow-xl bg-white p-4 absolute mt-2 border border-gray-200 rounded">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li><a href="#">Separated link</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--===============------List Group-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">List Group</h1>
+				<!----Component---->
+				<ul class="border divide-y rounded-md text-gray-600">
+					<li class=" px-5 py-2 bg-blue-600 text-white rounded-t">An active item</li>
+					<li class=" px-5 py-2">A second item</li>
+					<li class=" px-5 py-2">A third item</li>
+					<li class=" px-5 py-2">A fourth item</li>
+					<li class=" px-5 py-2 rounded-b">And a fifth one</li>
+				  </ul>
+			</div>
+			<!--===============------Modal-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">Modal</h1>
+				<!----Component---->
+				<!--------001---------->
+				<div x-data="{modal:false}">
+					<div class="mt-5 pb-10 px-12 flex justify-center">
+						<button @click.prevent="modal=true" class="text-xl focus:outline-none text-white bg-black p-4 font-medium tracking-widest shadow px-10 rounded-md shadow-xl hover:shadow-2xl hover:bg-purple-500 duration-300 ">
+							<span class="shadow-2xl">Click Modal Open</span>
+						</button>
+					</div>
+					<!--------modal---------->
+					<div x-show.transition="modal"
+					class="z-50  bg-black bg-opacity-70 md:overflow-hidden overflow-y-auto fixed left-0 top-0 w-full h-full flex justify-center items-center">
+						<div @click.away="modal=false" class="bg-white rounded  relative w-11/12 md:w-4/5 xl:w-3/5">
+							<!--------close button---------->
+							<div @click="modal=false" class=" absolute text-red-500  top-4 right-4">
+								<span class="">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+								  </svg>
+								</span>
+							</div>
+							<!--------content ---------->
+							<div>
+								<h1 class=" text-2xl font-bold p-4">This is a Demo Modal</h1>
+								<div>
+									<img class="w-full h-full" src="https://t4.ftcdn.net/jpg/03/17/25/45/360_F_317254576_lKDALRrvGoBr7gQSa1k4kJBx7O2D15dc.jpg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--===============------Nav and Tab-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">Nav and Tab</h1>
+				<!----Component---->
+				<div x-data="{ tab:'tab1'}" class=" flex items-center justify-center">
+					<div class=" h-1/3 md:w-1/3 bg-white overflow-auto">
+						<div class=" flex items-center">
+							<button @click="tab = 'tab1'" :class="{'bg-blue-700 font-medium': tab==='tab1'}"  class="px-4 focus:outline-none hover:bg-blue-700  hover:shadow-2xl py-1 rounded-l bg-blue-600 text-white capitalize">1</button>
+							<button @click="tab = 'tab2'" :class="{'bg-gray-700 font-medium': tab==='tab2'}" class="px-4 focus:outline-none hover:bg-gray-700 hover:shadow-2xl py-1 bg-gray-600 text-white capitalize">2</button>
+							<button @click="tab = 'tab3'" :class="{'bg-yellow-500 font-medium': tab==='tab3'}" class="px-4 focus:outline-none hover:bg-yellow-500 hover:shadow-2xl py-1 bg-yellow-400 text-white capitalize">3</button>
+							<button @click="tab = 'tab4'" :class="{'bg-red-600 font-medium': tab==='tab4'}" class="px-4 focus:outline-none hover:bg-red-600 hover:shadow-2xl py-1 bg-red-500 text-white capitalize">4</button>
+							<button @click="tab = 'tab5'" :class="{'bg-green-600 font-medium': tab==='tab5'}" class="px-4 focus:outline-none hover:bg-green-600 hover:shadow-2xl py-1 rounded-r bg-green-500 text-white capitalize">5</button>
+						</div>
+						<div class="mt-2">
+							<div class="bg-blue-700 text-white p-4 shadow-xl rounded"  x-show="tab === 'tab1'">Tab1  Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sapiente veniam unde ducimus nam maxime autem, expedita temporibus minus adipisci.</div>
+							<div class="bg-gray-600 text-white p-4 shadow-xl rounded" x-show="tab === 'tab2'">Tab2  Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sapiente veniam unde ducimus nam maxime autem, expedita temporibus minus adipisci.</div>
+							<div class="bg-yellow-600 text-white p-4 shadow-xl rounded" x-show="tab === 'tab3'">Tab3  Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sapiente veniam unde ducimus nam maxime autem, expedita temporibus minus adipisci.</div>
+							<div class="bg-red-600 text-white p-4 shadow-xl rounded" x-show="tab === 'tab4'">Tab4  Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sapiente veniam unde ducimus nam maxime autem, expedita temporibus minus adipisci.</div>
+							<div class="bg-green-500 text-white p-4 shadow-xl rounded" x-show="tab === 'tab5'">Tab5  Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sapiente veniam unde ducimus nam maxime autem, expedita temporibus minus adipisci.</div>
+						</div>
+					</div>
+				 </div>
+			</div>
+			<!--===============------Navbar-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">Navbar</h1>
+				<!----Component---->
+				<header>
+					<div  x-data="{humberger: false}">
+						<nav class="relative z-50 md:hidden" x-show="humberger"
+							@click.away="humberger = false"
+							x-transition:enter="duration-300 ease-in-out"
+							x-transition:enter-start="opacity-0 transform translate-y-12"
+							x-transition:enter-end="opacity-100 transform translate-y-0"
+							x-transition:leave="duration-300 ease-in-out"
+							x-transition:leave-start="opacity-100 transform translate-y-0"
+							x-transition:leave-end="opacity-0 transform translate-y-12"
+							>
+							<div class=" absolute bg-white top-20 border rounded text-xs font-semibold w-full" x-data=" {active :'active1'}">
+								<ul class="w-full tracking-wider">
+									<li class="hover:text-yellow-500 duration-300 hover:shadow border-b py-4 px-10">
+										<a href="#"
+										@click=" active='active1'"
+										:class="{'text-yellow-500 active': active==='active1'}"
+										>HOME</a>
+									</li>
+									<li class="hover:text-yellow-500 duration-300 hover:tracking-widest hover:shadow border-b py-4 px-10">
+										<a href="#"
+										@click=" active='active2'"
+										:class="{'text-yellow-500 active': active==='active2'}"
+										>PORTFOLIO</a>
+									</li>
+									<li class="hover:text-yellow-500 duration-300 hover:tracking-widest hover:shadow border-b py-4 px-10">
+										<a href="#"
+										@click=" active='active3'"
+										:class="{'text-yellow-500 active': active==='active3'}"
+										>ABOUT</a>
+									</li>
+									<li class="hover:text-yellow-500 duration-300 hover:tracking-widest hover:shadow border-b py-4 px-10">
+										<a href="#"
+										@click=" active='active4'"
+										:class="{'text-yellow-500 active': active==='active4'}"
+										>BLOG</a>
+									</li>
+									<li class="hover:text-yellow-500 duration-300 hover:tracking-widest hover:shadow border-b py-4 px-10">
+										<a href="#"
+										@click=" active='active5'"
+										:class="{'text-yellow-500 active': active==='active5'}"
+										>CONTACT</a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+						<nav class="uppercase py-5 flex justify-between sm:px-0 px-5 items-center text-center">
+							<div class=" flex md:hidden">
+								<button  @click="humberger=true">
+									<svg x-show="humberger===false" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+									</svg>
+									<svg x-show="humberger===true" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 ext-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+									  </svg>
+								</button>
+							</div>
+							<div>
+								<a class="text-yellow-500 sm:text-4xl text-3xl font-bold md:ml-0 ml-10" href="#">Lo<span class="text-gray-500">go</span></a>
+							</div>
+							<div class="flex space-x-6 text-xs" x-data=" {active :'active1'}">
+								<ul class="space-x-6 md:flex hidden tracking-wider scroll">
+									<li class="hover:text-yellow-500">
+										<a class="text-gray-500" href="#"
+										@click=" active='active1'"
+										:class="{'text-yellow-500 active': active==='active1'}"
+										>Home</a>
+									</li>
+									<li class="hover:text-yellow-500">
+										<a class="text-gray-500" href="#"
+										@click=" active='active2'"
+										:class="{'text-yellow-500 active': active==='active2'}"
+										>PORTFOLIO</a>
+									</li>
+									<li class="hover:text-yellow-500">
+										<a class="text-gray-500" href="#"
+										@click=" active='active3'"
+										:class="{'text-yellow-500 active': active==='active3'}"
+										>ABOUT</a>
+									</li>
+									<li class="hover:text-yellow-500">
+										<a class="text-gray-500" href="#"
+										@click=" active='active4'"
+										:class="{'text-yellow-500 active': active==='active4'}"
+										>BLOG</a>
+									</li>
+									<li class="hover:text-yellow-500">
+										<a class="text-gray-500" href="#"
+										@click=" active='active5'"
+										:class="{'text-yellow-500 active': active==='active5'}"
+										>CONTACT</a>
+									</li>
+								</ul>
+								<div>
+									<a class="sm:px-9 px-7 py-3 bg-yellow-500 text-white rounded-full hover:shadow-2xl whitespace-nowrap" href="#">LOG IN</a>
+								</div>
+							</div>
+						</nav>
+					</div>
+				</header>
+			</div>
+			<!--===============------offcanvas-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">Offcanvas </h1>
+				<!----Component---->
+				<div>
+					<div x-data="{humberger:false}">
+						<div class="flex items-center justify-between">
+							<button  @click="humberger=true" class="p-2 rounded-md border">Click me</button>
+							<button  @click="humberger=true">
+								<svg x-show="humberger===false" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+								</svg>
+								<svg x-show="humberger===true" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 ext-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+								  </svg>
+							</button>
+						</div>
+						<nav class="fixed top-0 bottom-0 left-0 z-50 w-72 bg-white" x-show="humberger"
+							@click.away="humberger = false"
+							x-transition:enter="transition ease-out top-0 duration-300 -ml-64"
+							x-transition:enter-start=""
+							x-transition:enter-end=" transform translate-x-64"
+							x-transition:leave="transition ease-out duration-300"
+							x-transition:leave-start=""
+							x-transition:leave-end="transform -translate-x-64"
+						>
+							<div class=" relative">
+								<div class=" absolute top-6 left-60">
+									<span @click="humberger=false"><i class="far fa-times-circle fa-2x text-red-400 hover:text-red-500 "></i></span>
+								</div>
+								<div class="relative border-b py-5 pl-7 mb-4">
+									<a class="text-yellow-500 text-4xl font-bold uppercase" href="#">Lo<span class="text-gray-500">go</span></a>
+									<span @click="humberger= false" class=" cursor-pointer absolute right-2 top-7 border-2 border-yellow-500 rounded text-gray-500 p-1 select-none hover:text-red-400 text-xs"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+									</svg></span>
+								</div>
+								<div class="space-x-6 text-xs font-semibold w-full" x-data=" {active :'active1'}">
+									<ul class="w-full tracking-wider scroll">
+										<li class="hover:text-yellow-500 duration-300 hover:shadow border-b py-4 px-10">
+											<a href="index.html"
+											@click=" active='active1'"
+											:class="{'text-yellow-500 active': active==='active1'}"
+											>HOME</a>
+										</li>
+										<li class="hover:text-yellow-500 duration-300 hover:tracking-widest hover:shadow border-b py-4 px-10">
+											<a href="#Portfolio"
+											@click=" active='active2'"
+											:class="{'text-yellow-500 active': active==='active2'}"
+											>PORTFOLIO</a>
+										</li>
+										<li class="hover:text-yellow-500 duration-300 hover:tracking-widest hover:shadow border-b py-4 px-10">
+											<a href="#About-us"
+											@click=" active='active3'"
+											:class="{'text-yellow-500 active': active==='active3'}"
+											>ABOUT</a>
+										</li>
+										<li class="hover:text-yellow-500 duration-300 hover:tracking-widest hover:shadow border-b py-4 px-10">
+											<a href="#blog"
+											@click=" active='active4'"
+											:class="{'text-yellow-500 active': active==='active4'}"
+											>BLOG</a>
+										</li>
+										<li class="hover:text-yellow-500 duration-300 hover:tracking-widest hover:shadow border-b py-4 px-10">
+											<a href="#"
+											@click=" active='active5'"
+											:class="{'text-yellow-500 active': active==='active5'}"
+											>CONTACT</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<!--===============------Pagination-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">Pagination</h1>
+				<!----Component---->
+				<div  class=" inline-flex items-center divide-x divide-blue-500 rounded border border-blue-500">
+					<button class="p-3 rounded-l focus:outline-none focus:ring hover:bg-gray-200 py-1 text-blue-500 ">Previous</button>
+					<button class="p-3 focus:outline-none focus:ring hover:bg-gray-200 py-1 text-blue-500 ">1</button>
+					<button class="p-3 focus:outline-none focus:ring hover:bg-gray-200 py-1 text-blue-500 ">2</button>
+					<button class="p-3 focus:outline-none focus:ring hover:bg-gray-200 py-1 text-blue-500 ">3</button>
+					<button class="p-3 focus:outline-none focus:ring hover:bg-gray-200 py-1 text-blue-500 ">4</button>
+					<button class="p-3 rounded-r focus:outline-none focus:ring hover:bg-gray-200 py-1 text-blue-500 ">Next</button>
+				</div>
+			</div>
+			<!--===============------Popover-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">Popover</h1>
+				<!----Component---->
+				<div x-data="{popover:false}" class="relative inline-block">
+					<button @click="popover=!popover" class="px-4 p-2 rounded-md font-medium text-white bg-blue-500 focus:outline-none shadow-2xl">Click this to open popover</button>
+					<div x-show="popover">
+						<div  class="absolute -top-14 -right-28 bg-white border rounded px-8 py-2">
+							<span>This is popover</span>
+						</div>
+						<div class="absolute -top-5 right-3 bg-white h-3 w-3 transform rotate-45 border-t-0 border-l-0 border"></div>
+					</div>
+				</div>
+			</div>
+			<!--===============------Progress Bar-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">Progress Bar</h1>
+				<!----Component---->
+				<!-------001--------->
+				<div class=" w-full h-5 rounded-md mb-5 bg-gray-200">
+					<div class=" h-full w-1/5 bg-green-500 text-white flex items-center justify-center font-medium rounded-l">
+						<span>20%</span>
+					</div>
+				</div>
+				<!-------002--------->
+				<div class=" w-full h-5 rounded-md mb-5 bg-gray-200">
+					<div class="bg-striped h-full w-2/5 bg-yellow-500 text-white flex items-center justify-center font-medium rounded-l">
+						<span>40%</span>
+					</div>
+				</div>
+				<!-------003--------->
+				<div class=" w-full h-5 rounded-md mb-5 bg-gray-200">
+					<div class="bg-striped  h-full w-3/5 bg-purple-500 text-white flex items-center justify-center font-medium rounded-l">
+						<span>60%</span>
+					</div>
+				</div>
+			</div>
+			<!--===============------Progress Bar-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">Progress Bar</h1>
+				<!----Component---->
+				<div class=" flex items-center justify-center">
+					<!--------001--------->
+					<svg class="animate-spin -ml-1 mr-3 h-8 w-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+						<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+						<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+					</svg>
+					<!--------001--------->
+					<svg class="animate-spin -ml-1 mr-3 h-8 w-8 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+						<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+						<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+					</svg>
+					<!--------001--------->
+					<svg class="animate-spin -ml-1 mr-3 h-8 w-8 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+						<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+						<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+					</svg>
+				</div>
+			</div>
+			<!--===============------Toasts-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">Toasts</h1>
+				<!----Component---->
+				<div x-data="{alert:true}" x-show="alert" class=" rounded-md shadow-2xl lg:w-1/3 md:3/6">
+					<div class=" flex items-center justify-between border rounded-t-md border-gray-200  px-4 py-2">
+						<div class="text-yellow-500 text-3xl font-bold">Demo</div>
+						<div class=" flex items-center">
+							<small class="text-gray-500">11 mins ago</small>
+							<div @click="alert=false" class="text-gray-400 hover:text-gray-500 transform duration-300 ml-4 cursor-pointer">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="border border-t-0 text-gray-500 rounded-b-md border-gray-200 p-4">
+						Hello, world! This is a toast message.
+					</div>
+				</div>
+				<!----------001--------------->
+				<div x-data="{alert:false}" class=" mt-10">
+					<button @click="alert=true" class=" p-3 border rounded-md bg-white focus:outline-none bg-yellow-500 text-white font-medium shadow-2xl">Click to open toast on bottom right</button>
+					<div x-show.transition="alert" class=" fixed right-5 bottom-5 bg-white rounded-md shadow-2xl lg:w-1/4">
+						<div class=" flex items-center justify-between border rounded-t-md border-gray-200  px-4 py-2">
+							<div class="text-yellow-500 text-3xl font-bold">Demo</div>
+							<div class=" flex items-center">
+								<small class="text-gray-500">11 mins ago</small>
+								<div @click="alert=false" class="text-gray-400 hover:text-gray-500 transform duration-300 ml-4 cursor-pointer">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+									</svg>
+								</div>
+							</div>
+						</div>
+						<div class="border border-t-0 text-gray-500 rounded-b-md border-gray-200 p-4">
+							Hello, world! This is a toast message.
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--===============------Tooltips-----=================-->
+			<div class="mb-20 md:p-10 pb-10 p-4 rounded-2xl shadow-xl">
+				<!----Text---->
+				<h1 class=" text-2xl font-bold text-red-500 mb-4">Tooltips</h1>
+				<!----Component---->
+				<div x-data="{popover:false}" class="relative inline-block">
+					<button @mouseenter="popover=true"@mouseout="popover=false" class="px-4 p-2 rounded-md font-medium text-white bg-blue-500">Hover this to open popover</button>
+					<div x-show="popover">
+						<div  class="absolute -top-14 -right-28 bg-white border rounded px-8 py-2">
+							<span>This is tooltip</span>
+						</div>
+						<div class="absolute -top-5 right-3 bg-white h-3 w-3 transform rotate-45 border-t-0 border-l-0 border"></div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<!--  alpine js -->
+		<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+	</body>
+	
+</html>
+
+
+
+
+
+
+
